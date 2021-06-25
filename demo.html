@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://www.w3schools.in/c-tutorial/ -->
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Demo</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="description"
+        content="C Tutorial - C is the most popular and widely used programming language. This C tutorial series will help you to start learning the C programming language.">
+    <link rel="canonical" href="https://www.w3schools.in/c-tutorial/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="C Tutorial - Learn C Programming">
+    <meta name="twitter:description"
+        content="C Tutorial - C is the most popular and widely used programming language. This C tutorial series will help you to start learning the C programming language.">
+    <meta name="twitter:image" content="/wp-content/uploads/2014/06/c-banner.jpg">
+    <link rel="icon" href="https://www.w3schools.in/wp-content/uploads/2020/06/cropped-w3-favicon-32x32.png"
+        sizes="32x32">
+    <link rel="icon" href="https://www.w3schools.in/wp-content/uploads/2020/06/cropped-w3-favicon-192x192.png"
+        sizes="192x192">
+    <link rel="apple-touch-icon"
+        href="https://www.w3schools.in/wp-content/uploads/2020/06/cropped-w3-favicon-180x180.png">
+    <meta name="msapplication-TileImage" content="/wp-content/uploads/2020/06/cropped-w3-favicon-270x270.png">
+    <link rel="stylesheet" href="./C Tutorial - Learn C Programming_files/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./C Tutorial - Learn C Programming_files/custom.scss"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script type="text/javascript" async="" src="./C Tutorial - Learn C Programming_files/analytics.js"></script>
+    <script src="./C Tutorial - Learn C Programming_files/demo.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T7BXC65"></script>
+    <script async="" src="./C Tutorial - Learn C Programming_files/f.txt"></script>
+    <script type="text/javascript" src="./C Tutorial - Learn C Programming_files/saved_resource" defer=""
+        async=""></script>
+    <script> var vitag = vitag || {};</script>
+    <script>vitag.outStreamConfig = { version: "v1", }</script>
+    <script>(function (w, d, s, l, i) {
+                    w[l] = w[l] || []; w[l].push({
+                        'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'
+                    }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-T7BXC65');</script>
+    <link rel="stylesheet" type="text/css" href="./C Tutorial - Learn C Programming_files/prettify.css">
+</head>
+<style>
+            
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+}
+.banner > div {
+  padding: 1rem;
+}
+.logo {
+  flex: 0 1 auto;
+  background-color: yellow;
+}
+.messages {
+  flex: 1 1 auto;
+  background-color: #e9e9e9;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+}
+.messages div {
+  /*animation: move .5s ease-in-out 0.5s 4 alternate;*/
+  overflow:hidden;
+  border: 1px solid transparent;
+  font-family: Century Gothic, sans-serif;
+}
+.message-topic {
+  font-weight: bold;
+  font-size: 2.25rem;
+  margin-right: 1rem;
+  padding: 1.5rem 1rem 1.5rem 0;
+}
+.message-content {
+  font-size: 1.85rem;
+}
+#topic-1 {
+  animation: showup-1 7s infinite;
+  border-right: 1px solid #666;
+}
+#message-1 {
+  width:0px;
+  height:0px;
+  animation: reveal-1 7s infinite;
+}
+#message-1 span {
+  margin-left:-50vw;
+  animation: slidein-1 7s infinite;
+}
+
+@keyframes showup-1 {
+    0% {opacity:0;border-right-color: transparent;}
+    20% {opacity:1;}
+    35% {border-right-color: #AAA;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+@keyframes reveal-1 {
+    0% {opacity:0;width:0px;height:0;}
+    20% {opacity:1;width:0px;height:30px;}
+    30% {width:550px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:550px;height:30px;}
+}
+@keyframes slidein-1 {
+    0% { margin-left:-600px; }
+    20% { margin-left:-600px; }
+    30% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+/*  */
+.shake {
+    position: fixed;
+    z-index: 999;
+    margin-top: 428px;
+    margin-left: -71px;
+  animation: shake-animation 2s ease infinite;
+  transform-origin: 50% 50%;
+}
+.element {
+    
+    box-shadow: 5px 10px 8px #888888;
+  margin: 0 auto;
+  width: 220px;
+  height: 150px;
+  background: rgb(177, 124, 124);
+  padding: 15px;
+  overflow: auto;
+}
+.sh1 {
+    position: fixed;
+    z-index: 999;
+    /* margin-top: 1px; */
+    margin-left: 1300px;
+ 
+}
+.element1 {
+    float: right;
+    box-shadow: 5px 10px 8px #888888;
+  margin: 0 auto;
+  width: 220px;
+  height: 550px;
+  background: white;
+  padding: 15px;
+  overflow: auto;
+}
+@keyframes shake-animation {
+   0% { transform:translate(0,0) }
+  1.78571% { transform:translate(5px,0) }
+  3.57143% { transform:translate(0,0) }
+  5.35714% { transform:translate(5px,0) }
+  7.14286% { transform:translate(0,0) }
+  8.92857% { transform:translate(5px,0) }
+  10.71429% { transform:translate(0,0) }
+  100% { transform:translate(0,0) }
+}
+
+</style>
+<div class="container-fluid" id="add1">
+  <span onclick="add1()" style="margin-left: 98%;cursor: pointer;">X</span>
+    <div class="banner">
+      
+      <div class="messages">
+        <!-- Message 2 -->
+        <div id="topic-1" class="message-topic">Mission</div>
+        <div id="message-1" class="message-content">
+          <span>This is Sample advertisement field </span>
+        </div>
+          
+        </div>
+    
+</div>
+
+</div>
+
+
+<body data-new-gr-c-s-check-loaded="14.1017.0" data-gr-ext-installed="" cz-shortcut-listen="true"><noscript><iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T7BXC65" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <nav class="navbar p-0 bg-white">
+        <div class="container-fluid"><a class="navbar-brand ml-3 pl-3 py-1" href="https://www.w3schools.in/"><img
+                    id="logo" style="height: 57px" alt="w3schools logo"
+                    src="./C Tutorial - Learn C Programming_files/w3schools-logo.png"></a>
+            <form method="get" action="https://www.w3schools.in/search/" autocomplete="off"
+                class="position-relative d-none d-md-none d-lg-block"><input type="text" placeholder="Search..."
+                    name="q" id="search-input" class="form-control rounded-lg px-3 mr-sm-3"><i class="fa fa-search"
+                    aria-hidden="true"></i></form>
+        </div>
+    </nav>
+    <nav class="navbar navbar-custom p-0 navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid"><button class="navbar-toggler m-1" type="button" data-toggle="collapse"
+                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><button id="switchM0"
+                class="navbar-toggler m-1 pull-righ" type="button" data-toggle="collapse" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="https://www.w3schools.in/"
+                            style="background-color: #22a9cf"><img title="Home"
+                                src="./C Tutorial - Learn C Programming_files/home.png" style="
+max-height: 66%;"></a></li>
+                    <li class="nav-item dropdown "><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Programming</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/c-tutorial/">C Tutorials</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/c-program/">C Programs</a><a
+                                class="dropdown-item"
+                                href="https://online-test.w3schools.in/practice-tests/c-programming/">C Practice Tests
+                                <span
+                                    class="badge badge-secondary rounded-0 badge-danger font-weight">&nbsp;New&nbsp;</span></a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/cplusplus-tutorial/">C++ Tutorials</a><a
+                                class="dropdown-item"
+                                href="https://www.w3schools.in/category/cplusplus11-tutorial/">C++11 Tutorials</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/cplusplus-program/">C++
+                                Programs</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/csharp-tutorial/">C# Tutorials</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/java-tutorial/">Java Tutorials</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/java-program/">Java Programs</a><a
+                                class="dropdown-item"
+                                href="https://www.w3schools.in/category/java-questions-answers/">Java Questions and
+                                Answers</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/python-tutorial/">Python Tutorials</a><a
+                                class="dropdown-item"
+                                href="https://www.w3schools.in/category/python-data-science/">Python Data Science</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/r/">R Tutorials</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Web Design</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/html-tutorial/">HTML Tutorials</a><a
+                                class="dropdown-item" href="https://online-test.w3schools.in/practice-tests/html/">HTML
+                                Practice Tests <span
+                                    class="badge badge-secondary rounded-0 badge-danger font-weight">&nbsp;New&nbsp;</span></a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/css3/">CSS Tutorials</a><a
+                                class="dropdown-item" href="https://online-test.w3schools.in/practice-tests/css/">CSS
+                                Practice Tests <span
+                                    class="badge badge-secondary rounded-0 badge-danger font-weight">&nbsp;New&nbsp;</span></a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/bootstrap4/">Bootstrap 4
+                                Tutorials</a><a class="dropdown-item" href="http://htmleditor.w3schools.in/"
+                                target="_blank">Online HTML, CSS and JS Editor</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Web Development</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/javascript-tutorial/">JavaScript Tutorials</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/jquery/">jQuery
+                                Tutorials</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/php/">PHP Tutorials</a><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/php-script/">PHP Scripts Demos</a><a
+                                class="dropdown-item"
+                                href="https://www.w3schools.in/category/wordpress-tutorial/">WordPress Tutorials</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/laravel-tutorial/">Laravel
+                                Tutorial</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/jsp/">JSP Tutorial</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/restful-web-services/">RESTful Web Services</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Database</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/sql/">SQL Tutorials</a><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/mysql/">MySQL Tutorials</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/mongodb/">MongoDB
+                                Tutorials</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Data Interchange</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/xml/">XML Tutorials</a><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/json/">JSON Tutorials</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Computer Science</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/data-structures-tutorial/">Data Structures</a><a
+                                class="dropdown-item"
+                                href="https://www.w3schools.in/category/operating-system-tutorial/">Operating
+                                System</a><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/dbms/">DBMS</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                            href="https://www.w3schools.in/c-tutorial/#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">More Courses</a>
+                        <div class="dropdown-menu m-0 rounded-0 border-0"><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/sdlc-tutorial/">SDLC</a><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/cloud-computing/">Cloud Computing</a><a
+                                class="dropdown-item"
+                                href="https://www.w3schools.in/category/software-testing/">Software Testing</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/git/">GIT</a><a
+                                class="dropdown-item" href="https://www.w3schools.in/category/ethical-hacking/">Ethical
+                                Hacking</a><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/cyber-security/">Cyber Security</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/technical-writing/">Technical Writing</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="https://www.w3schools.in/category/entrepreneurship/">Entrepreneurship</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="position-relative">
+        <div class="text-white text-center p-2" style="background-color: #22a9cf">
+            <h1 class="mb-0 font-weight">C Tutorial</h1>
+        </div>
+
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <style>
+                    #leftMenu .list-group-item.active {
+                        background-color: #22a9cf;
+                        border-color: #22a9cf
+                    }
+                </style>
+                <div class="d-none d-lg-block col-lg-3 col-xl-2 px-1" id="leftMenu">
+                    <div class="text-center mb-3 d-none d-sm-none d-lg-block"> <img style="height: 96px"
+                            src="./C Tutorial - Learn C Programming_files/cprogramming-logo.png"
+                            alt="cprogramming-Logo"> </div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Overview of C Language</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 active "
+                            href="https://www.w3schools.in/c-tutorial/#">C Tutorial</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/intro/">C Introduction</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/limitation-of-c-programming-language/">Limitation
+                            of C Programming Language</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/history-of-c/">History of C Programming
+                            Language</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/install/">C Installation</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">C Language Fundamentals</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/tokens/">C Tokens</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/identifiers/">C Identifiers</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/keywords/">C Keywords</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/constants/">C Constants</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/operators/">C Operators</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/data-types/">C Data Types</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/variables/">C Variables</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/type-casting/">C Type Casting</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Data Input and Output</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/program-structure/">C Program Structure</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/input-output/">C Input and Output (I/O)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/format-specifiers/">C Format Specifiers</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Decision Control Structures</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/">C Decision Making</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/if/">C if Statements</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/if-else/">C if-else
+                            Statements</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/nested-if-else/">C Nested if-else
+                            Statements</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/else-if/">C else-if
+                            Statements</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/goto/">C goto Statement</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/decision-making/switch/">C switch Statements</a>
+                    </div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Loop Control Structures</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/loops/">C Loops</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/loops/while/">C while loops</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/loops/do-while/">C do while loops</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/loops/for/">C for loops</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Functions</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/functions/">C Functions</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/function-arguments/">C Function Arguments</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/library-functions/">C Library Functions</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/variable-scope/">C Variable Scope</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/recursion/">C Recursion</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/storage-classes/">C Storage Classes</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Preprocessors and Header Files</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/preprocessors/">C Preprocessors</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/c-header-files/">C Header Files</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/custom-header-file-in-c/">C Custom Header File</a>
+                    </div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Arrays and Strings</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/arrays/">C Arrays</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/strings/">C Strings</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Pointers</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/pointers/">C Pointers</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/memory-management/">C Memory Management</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/dynamic-memory-allocation/">C Dynamic Memory
+                            Allocation</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Structure and Union</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/structures/">C Structures</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/unions/">C Unions</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/typedef/">C typedef</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">File Handling</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/">C File Handling</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/fopen/">C fopen</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/fclose/">C fclose</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/getc/">C getc</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/putc/">C putc</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/getw/">C getw</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/putw/">C putw</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/fprintf/">C fprintf</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/fscanf/">C fscanf</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/fgets/">C fgets</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/fputs/">C fputs</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/file-handling/feof/">C feof</a></div>
+                    <h6 class="h5 pl-3 text-dark text-uppercase">Other</h6>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/command-line-arguments/">C Command Line
+                            Arguments</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/c99/">C99 Features</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/error-handling/">C Error Handling</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/c-tutorial/bit-fields-in-c/">Bit Fields in C</a></div>
+                </div>
+                
+                <div class="shake" id="add3">
+                    <span onclick="add3()" style="margin-left:90%;cursor: pointer;">X</span>
+                    <div class="element">
+                        <span id="data" ></span>
+                    </div>
+                  </div>
+                  <div class="sh1" id="add4">
+                    <span onclick="add4()" style="margin-left:90%;cursor: pointer;">X</span>
+                    <div class="element1">
+                        <span id="data1" ></span>
+                    </div>
+                  </div>
+
+                <article class="col-12 col-lg-9 col-xl-8 px-1">
+                    <div class="box box-sm px-3 py-2">
+                        <p>This C tutorial series will help you to get started in the C programming language. By
+                            learning C, you will understand basic programming concepts. </p>
+                        <div class="row my-3" style="min-height:280px">
+                            <div class="col-md-6 text-center">
+                                <div class="adsbyvli" data-ad-slot="vi_607019207"></div>
+                            </div>
+                            <div class="col-md-6"><ins class="adsbygoogle" style="display:block"
+                                    data-ad-client="ca-pub-2177966827319387" data-ad-slot="6066759642"
+                                    data-ad-format="auto" data-ad-channel="2659997360"
+                                    data-full-width-responsive="true"></ins></div>
+                        </div>
+                        <p class="tip">C is one of the most popular and widely used programming language, used to
+                            develop system application software. </p>
+                        <h3>Audience</h3>
+                        <p>This C tutorial series has been designed for those who want to learn C programming; whether
+                            you are beginners or experts, tutorials are intended to cover basic concepts
+                            straightforwardly and systematically. </p>
+                        <h3>Required Knowledge</h3>
+                        <p>To learn the C Programming language, you haven't required any previous programming knowledge.
+                            A basic understanding of any other programming languages will help you understand the C
+                            programming concepts quickly. </p>
+                        <div id="add" style="border: 1px solid black;border-radius: 5px;">
+                            <span onclick="add_demo()" style="margin-left: 98%; cursor: pointer;">X</span>
+                            <img src="./C Tutorial - Learn C Programming_files/covid.jpeg" alt="" srcset="">
+                        </div>
+                        <br>
+                        <h3>Online Practice Tests</h3>
+                        <div class="bg-light p-3 border rounded-sm shadow-sm">Free online practice tests; challenge your
+                            knowledge of C programming and help you improve your programming knowledge and skills.<br><a
+                                class="btn btn-primary btn-custom mt-3"
+                                href="https://online-test.w3schools.in/practice-tests/c-programming/">C Programming
+                                Practice Tests ❯</a></div>
+                        <h3>C Example</h3>
+                        <p>A quick look at the example of <em>Hello, World!</em> In C programming, and a detailed
+                            description is given on the <a href="https://www.w3schools.in/c-tutorial/program-structure/"
+                                rel="noopener">C Program Structure</a> page.
+                        </p>
+                        <pre><code class="prettyprint prettyprinted" data-file="c_default" style=""><span class="com">/* Author: www.w3schools.in
+Date: 2018-04-28
+Description:
+Writes the words "Hello World" on the screen */</span><span class="pln">  
+</span><span class="com">#include</span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"Hello, World!\n"</span><span class="pun">);</span><span class="pln">
+    getch</span><span class="pun">();</span><span class="pln"> </span><span class="com">//Use to get one character input from user, and it will not be printed on screen.</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+                        <div class="example">Program Output:</div>
+                        <p><img loading="lazy" class="alignnone wp-image-2314 size-full"
+                                src="./C Tutorial - Learn C Programming_files/c.jpg" alt="C program" width="310"
+                                height="156"> </p>
+                        <p>The above example has been used to print <em>Hello, World!</em> Text on the screen. </p>
+                        <div class="row my-3" style="min-height:280px">
+                            <div class="col-md-6 text-center">
+                                <div class="adsbyvli" data-ad-slot="vi_607019207"></div>
+                            </div>
+                            <div class="col-md-6"> <ins class="adsbygoogle" style="display:block"
+                                    data-ad-client="ca-pub-2177966827319387" data-ad-slot="6066759642"
+                                    data-ad-format="auto" data-ad-channel="5094589012"
+                                    data-full-width-responsive="true"> </ins> </div>
+                        </div>
+                        <p class="nextv text-right mt-4"><span class="text-muted">Next Chapter : </span><a class="px-3 "
+                                href="https://www.w3schools.in/c-tutorial/intro/">C Introduction</a> <span
+                                class="text-primary">❯</span></p>
+                    </div>
+                </article>
+                <div class="d-none d-xl-block col-2 px-1">
+                    <div class="mb-5" style="min-height:600px">
+                        <div class="adsbyvli" data-ad-slot="vi_607019209"></div>
+                    </div>
+                    <div class="mb-5" style="min-height:600px"><ins class="adsbygoogle" style="display:block"
+                            data-ad-client="ca-pub-2177966827319387" data-ad-slot="2919879929" data-ad-format="auto"
+                            data-ad-channel="1346915699"></ins></div>
+                    <h5 class="pl-2 text-dark text-uppercase">Courses</h5>
+                    <div class="list-group list-group-flush shadow-sm rounded-sm p-0 mb-4"><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/html-tutorial/">HTML (21)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/css3/">CSS 3 (25)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/bootstrap4/">Bootstrap 4 (14)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/photoshop/">Photoshop (1)</a><a
+                            class="list-group-item list-group-item-action px-3 active" "href=" /category/c-tutorial/">C
+                            Programming (60)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/c-program/">C Programs (55)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/cplusplus-tutorial/">C++ (49)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/cplusplus11-tutorial/">C++11 (9)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/cplusplus-program/">C++ Programs (17)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/csharp-tutorial/">C# (18)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/java-tutorial/">Java (62)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/java-program/">Java Programs (28)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/java-questions-answers/">JAVA Questions and Answers
+                            (18)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/python-tutorial/">Python (37)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/python-data-science/">Python Data Science (5)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/python-programs/">Python Programs (1)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/r/">R Programming (17)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/swift-tutorial/">Swift (13)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/android-tutorial/">Android (2)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/javascript-tutorial/">JavaScript (11)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/angular/">Angular (2)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/jquery/">jQuery (6)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/php/">PHP (52)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/php8/">PHP 8 (1)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/php-script/">PHP Scripts (13)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/wordpress-tutorial/">Wordpress (16)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/laravel-tutorial/">Laravel (10)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/jsp/">Java Server Pages (JSP) (20)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/restful-web-services/">RESTful Web Services
+                            (7)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/sql/">SQL (10)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/mysql/">MySQL (14)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/mongodb/">MongoDB (24)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/xml/">XML (5)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/json/">JSON (11)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/http-tutorial/">Hypertext Transfer Protocol (HTTP)
+                            (3)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/data-structures-tutorial/">Data Structures
+                            (21)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/operating-system-tutorial/">Operating System
+                            (20)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/dbms/">DBMS (29)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/sdlc-tutorial/">Software Development Life Cycle
+                            (SDLC) (10)</a><a class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/cloud-computing/">Cloud Computing (37)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/software-testing/">Software Testing (16)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/git/">GIT (2)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/ethical-hacking/">Ethical Hacking (14)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/cyber-security/">Cyber Security (23)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/blockchain-tutorial/">Blockchain (3)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/hadoop-tutorial/">Big Data Hadoop (1)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/technical-writing/">Technical Writing (9)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/definition/">Definition (22)</a><a
+                            class="list-group-item list-group-item-action px-3 "
+                            href="https://www.w3schools.in/category/entrepreneurship/">Entrepreneurship (23)</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="position-absolute bg-dark" style="left: 0; font-size: 13px; right: 0; bottom: 0">
+        <div class="container-fluid pt-2 pb-1">
+            <div class="row">
+                <div class="col-sm text-white-50 mb-2"> © w3schools.in - All Rights Reserved. </div>
+                <div class="col-sm d-none d-md-none d-lg-block"> </div>
+                <div class="col-sm text-right">
+                    <ul id="menu-page-menu" class="list-inline mb-0">
+                        <li id="menu-item-2235"
+                            class="list-inline-item menu-item menu-item-type-post_type menu-item-object-page menu-item-2235">
+                            <a href="https://www.w3schools.in/page/about/">About Us</a> &nbsp;
+                        </li>
+                        <li id="menu-item-2239"
+                            class="list-inline-item menu-item menu-item-type-post_type menu-item-object-page menu-item-2239">
+                            <a href="https://www.w3schools.in/page/contact/">Contact Us</a> &nbsp;
+                        </li>
+                        <li id="menu-item-2238"
+                            class="list-inline-item menu-item menu-item-type-post_type menu-item-object-page menu-item-2238">
+                            <a href="https://www.w3schools.in/page/copyright/">Copyright</a> &nbsp;
+                        </li>
+                        <li id="menu-item-4965"
+                            class="list-inline-item menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-4965">
+                            <a href="https://www.w3schools.in/page/privacy">Privacy Policy</a> &nbsp;
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><span id="scrollup" style="right: 0px; bottom: 0px; display: inline;"><img alt="Scroll Back to Top"
+            src="./C Tutorial - Learn C Programming_files/up-aerow.png"></span>
+    <div id="layout-overlay"></div>
+    <script src="./C Tutorial - Learn C Programming_files/jquery-3.5.1.min.js"></script>
+    <script defer="" src="./C Tutorial - Learn C Programming_files/bootstrap.min.js"></script>
+    <script>function triggerAds() {//to adsense resume
+            [].forEach.call(document.querySelectorAll('ins.adsbygoogle'), function () { (adsbygoogle = window.adsbygoogle || []).push({}); }); $('div.adsbyvli').each(function (i, item) { var adslot = $(this).attr('data-ad-slot'); (vitag.Init = window.vitag.Init || []).push(function () { viAPItag.display(adslot) }); });
+        } $(function () { triggerAds(); });</script>
+    <script>$(function () {
+            $(document).on("click", "#switchM0 ", function () {
+                $("#layout-overlay").toggleClass("layout-overlay"), $("#leftMenu").toggleClass("leftMenuOn")
+            })
+
+            $("code.prettyprint").each(function () {
+                var filename = $(this).data("file"); if (filename) {
+                    var site = ''; var res = filename.split("_"); if (res[0] == 'html') {
+                        site = 'htmleditor.w3schools.in'
+                    }
+                    if (site != '') {
+                        $(this).parent().append('<a class="btn btn-sm btn-success btn-custom" href="http://' + site + '/?filename=' + filename + '" target="_blank" rel="nofollow">Live Demo ❯</a>')
+                    }
+                }
+            })
+
+            var nextL = $("#leftMenu .list-group .list-group-item.active").next("a"); if (nextL.length == 1) {
+                var nextPage = nextL[0].outerHTML.replace("list-group-item list-group-item-action ", ""); $(".nextv").html('<span class="text-muted">Next Chapter : </span>' + nextPage + ' <span class="text-primary">❯</span>')
+            } else {
+                var nextL = $("#leftMenu .list-group .list-group-item.active").parent().next().next().find("a"); if (typeof (nextL) != "undefined") {
+                    var nextPage = nextL[0].outerHTML.replace("list-group-item list-group-item-action ", ""); $(".nextv").html('<span class="text-muted">Next Chapter : </span>' + nextPage + ' <span class="text-primary">❯</span>')
+                }
+            }
+        })
+    </script>
+    <!--[if lt IE 9]><script defer src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script defer src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <script type="text/javascript"
+        id="">$(function () { $(window).scroll(function () { 100 < $(this).scrollTop() ? ($("#scrollup").fadeIn(), doHeightToggle = !1) : ($("#scrollup").fadeOut(), doHeightToggle = !0) }); $("#scrollup").click(function () { return $("html, body").animate({ scrollTop: 0 }, 800), !1 }) });</script>
+</body>
+
+</html>
