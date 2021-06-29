@@ -26,7 +26,9 @@ fetch('https://reqres.in/api/users/2')
   x.setAttribute("height", "150");
   x.setAttribute("alt", "The Pulpit Rock");
 
-  document.getElementById('data').innerHTML=data['first_name'] +" "+ data['last_name'] +`<br>`+data['email'] + `<br><br>` +supp['text']
+  document.getElementById('data').innerHTML=data['first_name'] +" "+ data['last_name'] 
+  document.getElementById('data2').innerHTML=data['last_name']
+  document.getElementById('data3').innerHTML = data['email']
   
   document.getElementById('data1').innerHTML=data['first_name'] +" "+ data['last_name'] +`<br>`+data['email'] + `<br><br>` +supp['text']+`<br><br>`
   document.getElementById('data1').appendChild(x)
